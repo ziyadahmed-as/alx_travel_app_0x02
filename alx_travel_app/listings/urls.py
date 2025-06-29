@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import ListOflocationsList, ListOfhotelsList, ListOfhotelsImagesList, ListOfhotelsReviewsList, ListOfhotelsBookingsList
-    
+from  .views import ListOflocations, ListOfhotels,ListOfhotelsBookings, ini
  
 
 urlpatterns = [
@@ -13,4 +13,6 @@ urlpatterns = [
     path('hotels/<int:hotel_id>/reviews/', ListOfhotelsReviewsList.as_view(), name='hotel_reviews_list'),
     path('hotels/<int:hotel_id>/reviews/<int:pk>/', ListOfhotelsReviewsList.as_view(), name='hotel_review_detail'),
     path('hotels/<int:hotel_id>/bookings/', ListOfhotelsBookingsList.as_view(), name='hotel_bookings_list'),
+    path('payment/initiate/', initiate_payment, name='initiate_payment'),
+    path('payment/verify/', verify_payment, name='verify_payment'),
 ]
